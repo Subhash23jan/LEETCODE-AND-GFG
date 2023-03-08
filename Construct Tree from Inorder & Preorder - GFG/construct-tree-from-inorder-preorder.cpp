@@ -39,34 +39,34 @@ struct Node
 };
 */
 class Solution{
-    
-    public:
-    int indexval=0;
-    Node *helper(int in[], int pre[], int &index, int s, int e,int size){
-        if(index >= size || s>e){
-            return NULL;
-        }
-        int ele = pre[indexval++];
-        Node *root = new Node(ele);
+    Node *constructTree(int in[],int pre[],int l,int r,int n)
+    {
+        if(l>r)
+        return NULL;
+        if(index>=n)
+        return NULL;
+        int val=pre[index++];
+        Node *root=new Node(val);
         int pos = 0;
         
-        for(int i=s; i<=e; i++){
-            if(in[i] == ele){
+        for(int i=l; i<=r; i++){
+            if(in[i] == val){
                 pos = i;
                 break;
             }
         }
-        
-        root->left = helper(in, pre, index, s, pos-1, size);
-        root->right = helper(in, pre, index, pos+1, e, size);
-        
+        root->left=constructTree(in,pre,l,pos-1,n);
+        root->right=constructTree(in,pre,pos+1,r,n);
         return root;
     }
-    
+    public:
+    map<int,int>mp;
+    int index=0;
     Node* buildTree(int in[],int pre[], int n)
     {
-        int index = 0;
-        return helper(in, pre, index, 0, n-1, n);
+        for(int i=0;i<n;i++)
+        mp[in[i]]=i;
+        return constructTree(in,pre,0,n-1,n);
     }
 };
 
