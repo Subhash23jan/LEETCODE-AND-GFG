@@ -1,15 +1,15 @@
 class Solution
 {
     public:
-        int maximumScore(vector<int> &A, int k)
+        int maximumScore(vector<int> &nums, int k)
         {
-            int res = A[k], mini = A[k], i = k, j = k, n = A.size();
+            int res = nums[k], mini = nums[k], i = k, j = k, n = nums.size();
             while (i > 0 or j < n - 1)
             {
-                if ((i > 0 ? A[i - 1] : 0)<(j < n - 1 ? A[j + 1] : 0))
-                    mini = min(mini, A[++j]);
+                if ((i > 0 ? nums[i - 1] : 0)<(j < n - 1 ? nums[j + 1] : 0))
+                    mini = min(mini, nums[++j]);
                 else
-                    mini = min(mini, A[--i]);
+                    mini = min(mini, nums[--i]);
                 res = max(res, mini *(j - i + 1));
             }
             return res;
