@@ -14,20 +14,20 @@ class Solution
                 }
                 else
                 {
-                    int i = r - 1;
-                    while (s[i] != s[l]) i--;
-                    if (i == l)
+                    int i = l +1;
+                    while (s[i] != s[r]) i++;
+                    if (i == r)
                     {
-                        swap(s[i], s[i+ 1]);
+                        swap(s[i], s[i-1]);
                         ans++;
                     }
                     else
                     {
-                        while (i < r)
+                        while (i >l)
                         {
-                            swap(s[i], s[i + 1]);
+                            swap(s[i], s[i - 1]);
                             ans++;
-                            i++;
+                            i--;
                         }
                         l++;
                         r--;
