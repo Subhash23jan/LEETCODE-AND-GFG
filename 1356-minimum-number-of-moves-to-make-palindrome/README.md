@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/minimum-number-of-moves-to-make-palindrome">1356. Minimum Number of Moves to Make Palindrome</a></h2><h3>Hard</h3><hr><p>You are given a string <code>s</code> consisting only of lowercase English letters.</p>
+<h2><a href="https://leetcode.com/problems/minimum-number-of-moves-to-make-palindrome">Minimum Number of Moves to Make Palindrome</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>You are given a string <code>s</code> consisting only of lowercase English letters.</p>
 
 <p>In one <strong>move</strong>, you can select any two <strong>adjacent</strong> characters of <code>s</code> and swap them.</p>
 
