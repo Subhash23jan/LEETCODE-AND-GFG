@@ -1,0 +1,1 @@
+<h2>minimum-impossible-or Notes</h2><hr>[ Time taken: 2 m 47 s ]
