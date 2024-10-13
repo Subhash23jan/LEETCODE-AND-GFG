@@ -37,9 +37,9 @@ class Solution
                             c + 1
                         } });
                     mx = max(mx, nums[r][c + 1]);
-                    cout<<mx<<" "<<-pq.top().first<<endl;
                 }
-                if(pq.size()<n){
+                if (pq.size() < n)
+                {
                     break;
                 }
             }
