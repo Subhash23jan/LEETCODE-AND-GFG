@@ -13,7 +13,7 @@ public:
                 continue;
             word.insert(t);
             f(j + 1, cnt + 1, s);
-            word.erase(t); 
+            word.erase(t);
         }
     }
     int maxUniqueSplit(string& s) {
