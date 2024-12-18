@@ -3,7 +3,7 @@ class Solution {
     vector<long long> hash, pow;
 
     long long getHash(int l, int r) {
-        long long res = (hash[r + 1] - (hash[l] * pow[r - l + 1]) % mod + mod) % mod;
+        long long res = (hash[r ] - (hash[l] * pow[r - l ]) % mod + mod) % mod;
         return res;
     }
 
@@ -32,10 +32,10 @@ public:
                 int len3 = n - j;
                 bool ans1 = false, ans2 = false;
 
-                if (len1 <= len2 && isSame(nums, 0, i - 1, i, i + len1 - 1)) {
+                if (len1 <= len2 && isSame(nums, 0, i , i, i + len1 )) {
                     ans1 = true;
                 }
-                if (len2 <= len3 && isSame(nums, i, j - 1, j, j + len2 - 1)) {
+                if (len2 <= len3 && isSame(nums, i, j , j, j + len2 )) {
                     ans2 = true;
                 }
 
