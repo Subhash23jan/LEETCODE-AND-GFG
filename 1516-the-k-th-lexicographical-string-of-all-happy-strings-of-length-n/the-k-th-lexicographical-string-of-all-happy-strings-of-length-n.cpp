@@ -1,26 +1,22 @@
 class Solution {
-    string solve(int n,string str,int &k,char ch)
-    {
-        if(n==0){
-             k--;
+    string solve(string str, int n, int &k) {
+        if (n == 0) {
+            k--;
+            if (k == 0) return str;
+            return "";
         }
-        if(k==0 && n==0) return str;
-        if(n<0) return "";
-        string ans="";
-        for(char i='a';i<='c';i++)
-        {
-            if(ch!=i){
-                ans=solve(n-1,str+i,k,i);
-                if(ans!=""){
-                    break;
-                }
+        char prev = str.empty() ? '#' : str.back();
+        for (char ch = 'a'; ch <= 'c'; ch++) {
+            if (ch != prev) {
+                string ans = solve(str + ch, n - 1, k);
+                if (!ans.empty()) return ans;
             }
         }
-        return ans;
+        return "";
     }
+
 public:
     string getHappyString(int n, int k) {
-        string ans= solve(n,"",k,'#');
-        return ans;
+        return solve("", n, k);
     }
 };
