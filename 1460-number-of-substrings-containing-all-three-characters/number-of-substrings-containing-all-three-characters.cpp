@@ -1,26 +1,23 @@
-class Solution
-{
-    public:
-        int numberOfSubstrings(string s)
+class Solution {
+public:
+    int numberOfSubstrings(string s) {
+        int n=s.size();
+        long long totalSubstrings=1LL*(n)*(n+1)/2;
+        int l=0,r=0;
+        long long cnt=0;
+        unordered_map<char,int>mp;
+        while(r<n)
         {
-            int a = -1, b = -1, c = -1;
-            int j = 0, i = 0, n = s.size(), ans = 0;
-            map<char, int> mp;
-            while (j < n)
-            {
-                mp[s[j]]++;
-                while (mp.size() == 3)
-                {
-                    ans += (n - j);
-                    mp[s[i]]--;
-                    if (mp[s[i]] == 0)
-                    {
-                        mp.erase(s[i]);
-                    }
-                    i++;
+            mp[s[r]]++;
+            while(mp.size()==3){
+                if(--mp[s[l]]==0){
+                    mp.erase(s[l]);
                 }
-                j++;
+                l++;
             }
-            return ans;
+            cnt+=(r-l+1);
+            r++;
         }
+        return totalSubstrings-cnt;
+    }
 };
